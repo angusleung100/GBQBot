@@ -1,0 +1,2 @@
+{"prompt": "Plot RSI for Bitcoin for the past 3 days", "completion": "{['2023-01-27', '90.0'], ['2023-01-28', '87.2'], ['2023-01-29', '92.5']}"}
+{"prompt": "What was the closing price of Ethereum last Thursday?", "completion": "$2999"}

@@ -1,0 +1,43 @@
+<h1>Get Broke Quick Bot</h1>
+<span>For legal reasons, this is not financial advice and I am not responsible for your failing marriage if you lose all your savings.</span>
+<br>
+<style>
+    body    {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .query-line {
+        display: inline;
+    }
+
+    textarea    {
+        width: 75%;
+        height: 200px;
+    }
+
+    #query  {
+        width: 75%;
+        
+    }
+</style>
+
+<body>
+
+    <div class="data-rows"></div>
+    <div class="sentiment"></div>
+    <div class="bot-messages">
+        <p><b>Response:</b></p>
+        <textarea id="messages" readonly>{{ response[0] }}</textarea>
+    </div>
+    <br>
+
+    <div class="query-line">
+        <p></p><b>Previous Query:</b> {{ response[1] }}</p>
+        <br>
+        <form method="POST" action="/">
+            <input type="text" name="query" id="query" placeholder="Bitcoin, ETH, WAXP">
+            <input type="submit" name="send" id="send" value="Query">
+        </form>
+    </div>
+</body>
