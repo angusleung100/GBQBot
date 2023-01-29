@@ -1,3 +1,4 @@
+# Imports
 import openai
 
 import json
@@ -11,8 +12,6 @@ from flask import render_template
 from flask import request
 from flask import session
 
-# Keys
-
 app = Flask(__name__)
 
 # Routing
@@ -22,8 +21,9 @@ def index():
     
     response = ["", ""]
 
-    if request.method == "POST":
-
+    if request.method == "POST":    # Query sent
+        
+        # Keys
         openai.api_key = ""
     
         today = datetime.datetime.now();
@@ -43,15 +43,17 @@ def index():
         response[1] = request.form['query']
         response[0] = botResponse
 
+        # Troubleshooting
         print("Bot Raw Response: ", botResponse)
         print("Bot Text Response: ", response[0])
         print("Last Line: ", response[1])
 
+        # Extract OpenAI response
         response[0] = botResponse["choices"][0]["text"]
 
         return render_template('index.html', response=response)
     
-    else:
+    else:   # No query
         botResponse = ""
 
         return render_template('index.html', response=response)
